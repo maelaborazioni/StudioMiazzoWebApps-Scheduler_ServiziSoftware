@@ -57,7 +57,7 @@ function bp_sincronizza_servizi_software()
 		
 			// troviamo il corrispondente "proprietario" nella tabella sec_owner del database
 			// che ha associato il database avente il nome specificato
-			/** @type{JSFoundset<db:/svy_framework/sec_owner>}*/
+			/** @type{JSFoundSet<db:/svy_framework/sec_owner>}*/
 			var fsOwner = databaseManager.getFoundSet(globals.Server.SVY_FRAMEWORK,'sec_owner');
 			if(fsOwner.find())
 			{
@@ -73,7 +73,7 @@ function bp_sincronizza_servizi_software()
 		            	// trova le ditte presenti nel corrispondente database
 						if(datasources.db[dbName.toLowerCase()])
 						{
-							/** @type {JSFoundset<db:/ma_anagrafiche/ditte>}*/
+							/** @type {JSFoundSet<db:/ma_anagrafiche/ditte>}*/
 			            	var fsDitteCliente = databaseManager.getFoundSet(dbName,globals.Table.DITTE);
 							if(fsDitteCliente.find())
 							{
@@ -104,7 +104,7 @@ function bp_sincronizza_servizi_software()
 										var dataFineServizio = periodoAl ? globals.getLastDatePeriodo(periodoAl) : null;
 									
 										// codice per sincronizzazione (al netto di unificazione dei nomi dei servizi)											
-										/** @type{JSFoundset<db:/svy_framework/sec_owner_in_module>}*/
+										/** @type{JSFoundSet<db:/svy_framework/sec_owner_in_module>}*/
 										var fsOwnerModule = databaseManager.getFoundSet(globals.Server.SVY_FRAMEWORK,'sec_owner_in_module');
 										if(fsOwnerModule.find())
 										{
@@ -181,7 +181,7 @@ function bp_sincronizza_servizi_software()
 										}
 									}
 //									// per ogni ditta verifica i servizi attivi su ma_anagrafiche interno
-//									/** @type{JSFoundset<db:/ma_anagrafiche_generale/ditte_servizi>}*/
+//									/** @type{JSFoundSet<db:/ma_anagrafiche_generale/ditte_servizi>}*/
 //									var fsDittaServizi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE_GENERALE,globals.Table.DITTE_SERVIZI);
 //									if(fsDittaServizi.find())
 //									{
@@ -203,7 +203,7 @@ function bp_sincronizza_servizi_software()
 //											scopes.job.writeJobInfo(codiceServizio + ' - valido dal periodo : ' + currDittaServizio.periodo_dal + ' al periodo ' + currDittaServizio.periodo_al);
 //											
 //                                            // codice per sincronizzazione (al netto di unificazione dei nomi dei servizi)											
-//											/** @type{JSFoundset<db:/svy_framework/sec_owner_in_module>}*/
+//											/** @type{JSFoundSet<db:/svy_framework/sec_owner_in_module>}*/
 //											var fsOwnerModule = databaseManager.getFoundSet(globals.Server.SVY_FRAMEWORK,'sec_owner_in_module');
 //											if(fsOwnerModule.find())
 //											{
