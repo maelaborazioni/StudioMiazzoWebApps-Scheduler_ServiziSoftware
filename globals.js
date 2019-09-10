@@ -90,7 +90,7 @@ function bp_sincronizza_servizi_software()
 												      ,[CodiceSoftware] \
 												      ,[Periodo_Dal] \
 												      ,[Periodo_Al] \
-												      FROM [V_Ditte_ModuliSoftware] \
+												      FROM [V_Ditte_ModuliSoftware_2] \
 												      WHERE idDitta = " + currDittaCliente.idcliente;
 									var dsModules = databaseManager.getDataSetByQuery(globals.Server.MA_ANAGRAFICHE,sqlModules,[],-1)
 									
